@@ -16,8 +16,6 @@ RUN pip install --no-cache-dir -r requirements.txt
 # Копируем остальной код
 COPY . .
 
-# Открываем порт
 EXPOSE 8000
 
-# Запуск
-CMD ["uvicorn", "app.main:app", "--host", "0.0.0.0", "--port", "8000"]
+CMD ["sh", "-c", "uvicorn app.main:app --host 0.0.0.0 --port ${PORT:-8000}"]
