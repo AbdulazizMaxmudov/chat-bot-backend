@@ -11,6 +11,8 @@ class AzureSpeechClient:
     """Small wrapper around Azure AI Speech SDK for PCM STT and MP3 TTS."""
 
     def _base_config(self) -> speechsdk.SpeechConfig:
+        if not settings.azure_speech_key or not settings.azure_speech_region:
+            raise RuntimeError("AZURE_SPEECH_KEY and AZURE_SPEECH_REGION env vars are required for speech features")
         return speechsdk.SpeechConfig(
             subscription=settings.azure_speech_key,
             region=settings.azure_speech_region,
