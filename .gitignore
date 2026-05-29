@@ -1,0 +1,23 @@
+# Python
+venv/
+__pycache__/
+*.pyc
+*.pyo
+
+# Environment
+.env
+.env.*
+!.env.example
+
+# Credentials & Keys
+key/
+gen-lang-client-*.json
+*.pem
+*.key
+
+# Logs & Temp
+*.log
+tunnel*.txt
+dump.txt
+docx_dump.txt
+knowledge_full.txt
